@@ -5,7 +5,6 @@
         public double Calculate(double number1, double number2, string operation)
         {
 
-            string nonNullOperation = operation ?? throw new ArgumentNullException(nameof(operation));
             double answer;
 
             switch (operation)
@@ -27,21 +26,13 @@
                     break;
 
                 default:
+                    Console.WriteLine("Your choice {0} is invalid...!, Please try again", operation);
                     answer = 0;
                     break;
             }
             return answer;
-
-            //if (operation == "/")
-            //{
-            //    return Divide(number1, number2);
-            //}
-            //else
-            //{
-            //    throw new CalculationOperationNotSupportedException(operation);
-
-            //}
         }
+
         private double Add(double number, double anotherNumber)
         {
             try
